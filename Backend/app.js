@@ -1,10 +1,12 @@
+if (process.env.NODE_ENV != "production") {
+  require("dotenv").config();
+}
 const express = require("express");
 const mongoose = require("mongoose");
-const userrouter = require("./routes/userroute.js");
 const cors = require("cors");
-const dotenv = require("dotenv");
+const userrouter = require("./routes/userroute.js");
 
-dotenv.config();
+
 const app = express();
 const PORT = process.env.PORT || 8080;
 
@@ -13,8 +15,8 @@ const corsOptions = {
   origin: "http://localhost:5173",
   credentials: true
 };
-app.use(cors(corsOptions));
 
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
