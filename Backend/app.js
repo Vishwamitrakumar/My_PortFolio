@@ -1,6 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const userRouter = require("./routes/userRoute.js");
+const userrouter = require("./routes/Userroute.js");
 const cors = require("cors");
 const dotenv = require("dotenv");
 
@@ -19,7 +19,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 
-app.use("/user", userRouter);
+app.use("/user", userrouter);
 
 const MONGO_URI = process.env.MONGO_URI;
 async function main() {
