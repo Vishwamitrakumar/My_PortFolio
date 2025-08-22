@@ -12,8 +12,8 @@ router.post("/", async (req, res) => {
 
     const data = new Port_User({ name, email, phone, message });
     await data.save();  
-
     res.status(201).json({ success: true, user: data }); 
+    
   } catch (err) {
     console.error("Error saving user:", err);
     res.status(500).json({ error: "Failed to save data" });
