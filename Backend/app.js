@@ -12,7 +12,8 @@ const PORT = process.env.PORT || 8080;
 
 
 const corsOptions = {
-  origin: ["http://localhost:5173", "https://my-portfolio-vsingh.vercel.app"] ,
+  origin: ["http://localhost:5173", "https://my-portfolio-vsingh.vercel.app" , "https://my-portfolio-vsingh-data.vercel.app"] ,
+  methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 };
 
